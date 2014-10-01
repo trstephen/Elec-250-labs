@@ -3,6 +3,7 @@
 \usepackage[T1]{fontenc}	%better font encoding
 \usepackage[utf8]{inputenc}	%better font encoding
 \usepackage{graphicx}		%allow insertion of images
+\graphicspath{ {graphics/} }	% the relative path to the graphics folder
 \usepackage[usenames,dvipsnames,svgnames,table]{xcolor}		%allow colour
 \usepackage{amsmath,amssymb,amsthm,textcomp, xfrac}			%math symbols, etc
 \usepackage{enumerate}		
@@ -130,7 +131,7 @@ Zhen \textsc{Li}
 \end{minipage}\\[1.5cm]
 
 % If you don't want a supervisor, uncomment the two lines below and remove the section above
-\Large Clayton \textsc{Kihn}
+\Large Clayton was here messing with things because he is a GitHub Newbie\textsc{Kihn}
 \large V00794569	\\
 \Large Yves \textsc{Senechal}
 \large V00213837	\\
@@ -181,7 +182,7 @@ To verify and become familiar with the following linear circuit theorems:
 \subsection{Kirchhoff's Current Law}
 All measured current values in this section of the experiment were consistent with the calculated 
 values within 5\% uncertainty. The largest source of uncertainty is the tolerance of the resistors 
-(5\%). The calculated and measured quantities are summarized in Figure \ref{fig.Current}.
+(5\%). The calculated and measured quantities are summarized in Figure \ref{fig.Current} on the next page.
 The consistency of the measured values with the calculations confirms that KCL can be applied 
 to this circuit.
 
@@ -197,14 +198,14 @@ position directly above ${R}_{2}$ in Figure \ref{fig.setup}. However, there are 
 C. The upper right corner of Figure \ref{fig.setup}, where ${I}_{3}$ joins ${I}_{L}$ is a trivial node.)
 \begin{figure}[htbp]
 \centering
-\includegraphics[scale=0.4]{Fig_2_1.png}
+\includegraphics[scale=0.8]{Fig_2_1.png}
 %\includegraphics[scale=0.2,width=\linewidth, keepaspectratio]{Fig_2_1.png}
 \caption{Initial circuit setup}
 \label{fig.setup}
 \end{figure}\\
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[scale=.7]{CurrentLawMeasurement.png}
+	\includegraphics[scale=1]{CurrentLawMeasurement.png}
 	%\includegraphics[scale=0.2,width=\linewidth, keepaspectratio]{Fig_2_1.png}
 	\caption{Calculated current and measurement comparison}
 	\label{fig.Current}
@@ -235,18 +236,19 @@ Confirmation of KVL in loops 1 and 2 are:
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[scale=0.65]{VoltageLawMeasurement.png}
+	\includegraphics[scale=1]{VoltageLawMeasurement.png}
 	%\includegraphics[scale=0.2,width=\linewidth, keepaspectratio]{Fig_2_1.png}
 	\caption{Calculated voltage and measurement comparison}
 	\label{fig.Voltage}
 \end{figure}
+\pagebreak
 %The equipment used in the lab was an industrial-type hand-held XRF spectrometer type XMET920. Spectra data was graphed and analysed using Microsoft Excel.
 
 \subsection{Linearity Theorem}
-The first step in this section was to disable the voltage source $ V_{b}$ of Figure \ref{fig.setup} by replacing it with a short circuit. The input voltage source $V_{a}$ was then varied to obtain the load current and load voltage plots of Figures \ref{fig.CurrentLinearity}, below, and \ref{fig.Voltagelinearity} located on the next page.\\
+The first step in this section was to disable the voltage source $ V_{b}$ of Figure \ref{fig.setup} by replacing it with a short circuit. The input voltage source $V_{a}$ was then varied to obtain the load current and load voltage plots of Figures \ref{fig.CurrentLinearity} and \ref{fig.Voltagelinearity} below.\\
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[scale=1.25]{CurrentLinearity.png}
+	\includegraphics[scale=1]{CurrentLinearity.png}
 	%\includegraphics[scale=0.2,width=\linewidth, keepaspectratio]{Fig_2_1.png}
 	\caption{Linearity of Resistive Circuit}
 	\label{fig.CurrentLinearity}
@@ -276,7 +278,7 @@ The experimental proportionality constants using meter readings were as follows:
 Thus, the theoretical and experimental proportionality constants agree to two decimal places.
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[scale=0.8]{LinearityMeasurement.png}
+	\includegraphics[scale=1]{LinearityMeasurement.png}
 	%\includegraphics[scale=0.2,width=\linewidth, keepaspectratio]{Fig_2_1.png}
 	\caption{Linearity}
 	\label{fig.linMeasure}
