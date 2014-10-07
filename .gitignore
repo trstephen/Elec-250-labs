@@ -2,7 +2,6 @@
 *.log
 <<<<<<< Updated upstream
 *.out
-*.pdf
 *.gz
 *.toc
 *.lof
