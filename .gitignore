@@ -1,10 +1,7 @@
 *.aux
 *.log
-<<<<<<< Updated upstream
 *.out
 *.gz
 *.toc
 *.lof
-=======
 *.bbx
->>>>>>> Stashed changes
