@@ -192,8 +192,8 @@ A01 - B01\\[1.5cm]
 %			  TABLE OF CONTENTS
 %----------------------------------------------------------------------------
 
-\tableofcontents
-\pagebreak
+%\tableofcontents
+%\pagebreak
 
 %\listoffigures
 %\pagebreak
@@ -214,38 +214,63 @@ The object of the experiment can be copied from the manual:
 The results are basically an account of the experimental setup, methods of measurement and the results obtained. Simple circuit or block diagrams should be included in this section to explain the experimental procedure. The use of simple and clear diagrams is what distinguishes a good report from a poor one.
 
 \subsection{RC Circuit}\label{sec:rc}
+
+\begin{equation}
+	\tan { \theta  } =\left( \frac { 1 }{ \omega RC }  \right) =\left( \frac { 1 }{ 2\pi fRC }  \right) 
+	\label{eqn:rc_theta}
+\end{equation}
+
+\begin{equation}
+		I_{max}(t) = V_{max}(t)\frac{C\omega}{\sqrt{(RC\omega)^2 + 1} }
+		\label{eqn:rc_current}
+\end{equation}
+
+Hey, look at equation~\eqref{eqn:rc_theta}.
+
 \begin{table}[h]
 	\centering
 	\begin{tabular}{c c c c c}
 		\toprule
 		&				\multicolumn{2}{c}{Calculated}	& \multicolumn{2}{c}{Measured}	\\
 		\cline{2-5}
-		$R$ (k$\Omega$)	& $I$ (A) 	& $\Theta$ ($^\circ$) 	& $I$ (A) 	& $\Theta$ ($^\circ$) \\
+		$R$ (k$\Omega$)	& $I$ (A) 	& $\theta$ ($^\circ$) 	& $I$ (A) 	& $\theta$ ($^\circ$) \\
 		\hline
-		1				& -			& -						& -			&	-	\\
-		5				& -			& -						& -			&	-	\\
-		10				& -			& -						& -			&	-	\\
+		1				& -			& 72.56					& -			&	-	\\
+		5				& -			& 32.48					& -			&	-	\\
+		10				& -			& 17.67					& -			&	-	\\
 		\toprule
 	\end{tabular}
-	\caption{Calculated and measured values in the RC circuit}
+	\caption{Calculated and measured values in the RC circuit ($f$ = 10 kHz)}
 	\label{table:rc}
 \end{table}
 
 \subsection{RL Circuit}\label{sec:rl}
+
+\begin{equation}
+	\tan { \theta  } =\left( \frac { -\omega L }{ R }  \right) =\left( \frac { -2\pi fL }{ R }  \right) 
+	\label{eqn:rl_theta}
+\end{equation}
+
+\begin{equation}
+		I_{max}(t) = \frac{V_{max}(t)}{\sqrt{R^2 + L^2\omega^2}}
+		\label{eqn:rl_current}
+\end{equation}
+
+
 \begin{table}[h]
 	\centering
 	\begin{tabular}{c c c c c c c c c}
 		\toprule
 		& \multicolumn{2}{c}{$1 \mu H$}	& \multicolumn{2}{c}{$220 \mu H$} & \multicolumn{2}{c}{$470 \mu H$} & \multicolumn{2}{c}{$1000 \mu H$} \\
 		\cline{2-9}
-		$R$ (k$\Omega$)	& $V$ (V) 	& $\Theta$ ($^\circ$) 	& $V$ (V) 	& $\Theta$ ($^\circ$)	& $V$ (V) 	& $\Theta$ ($^\circ$)	& $V$ (V) 	& $\Theta$ ($^\circ$) \\
+		$R$ (k$\Omega$)	& $I$ (mA) 	& $\theta$ ($^\circ$) 	& $I$ (mA) 	& $\theta$ ($^\circ$)	& $I$ (mA) 	& $\theta$ ($^\circ$)	& $I$ (mA) 	& $\theta$ ($^\circ$) \\
 		\hline
-		1		& -		& -		& -		& -		& -		& -		& -		& -	\\
-		5		& -		& -		& -		& -		& -		& -		& -		& - \\
-		10		& -		& -		& -		& -		& -		& -		& -		& - \\
+		1		& 10.0	& -0.18	& 8.23	& -34.65& 5.61	& -55.89& 3.03	& -72.34\\
+		5		& 2.00	& -0.04	& 1.98	& -7.87	& 1.92	& -16.45& 1.69	& -32.14\\
+		10		& 1.00	& -0.02	& 0.998	& -3.95	& 0.989	& -8.40	& 0.954	& -17.44\\
 		\toprule
 	\end{tabular}
-	\caption{Calculated values in the RL circuit}
+	\caption{Calculated values in the RL circuit ($f$ = 500 kHz)}
 	\label{table:rl_calc}
 \end{table}
 
@@ -255,14 +280,14 @@ The results are basically an account of the experimental setup, methods of measu
 		\toprule
 		& \multicolumn{2}{c}{$1 \mu H$}	& \multicolumn{2}{c}{$220 \mu H$} & \multicolumn{2}{c}{$470 \mu H$} & \multicolumn{2}{c}{$1000 \mu H$} \\
 		\cline{2-9}
-		$R$ (k$\Omega$)	& $V$ (V) 	& $\Theta$ ($^\circ$) 	& $V$ (V) 	& $\Theta$ ($^\circ$)	& $V$ (V) 	& $\Theta$ ($^\circ$)	& $V$ (V) 	& $\Theta$ ($^\circ$) \\
+		$R$ (k$\Omega$)	& $I$ (mA) 	& $\theta$ ($^\circ$) 	& $I$ (mA) 	& $\theta$ ($^\circ$)	& $I$ (mA) 	& $\theta$ ($^\circ$)	& $I$ (mA) 	& $\theta$ ($^\circ$) \\
 		\hline
 		1		& -		& -		& -		& -		& -		& -		& -		& -	\\
 		5		& -		& -		& -		& -		& -		& -		& -		& - \\
 		10		& -		& -		& -		& -		& -		& -		& -		& - \\
 		\toprule
 	\end{tabular}
-	\caption{Measured values in the RL circuit}
+	\caption{Measured values in the RL circuit ($f$ = 500 kHz)}
 	\label{table:rl_meas}
 \end{table}
 
