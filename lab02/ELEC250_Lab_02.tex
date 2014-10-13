@@ -245,9 +245,9 @@ The calculated and measured values of the current ($I$) and phase shift ($\theta
 		\cline{2-5}
 		$R$ (k$\Omega$)	& $I$ (mA) 	& $\theta$ ($^\circ$) 	& $I$ (mA) 	& $\theta$ ($^\circ$) \\
 		\hline
-		1				& 3.15		& 72.56					& -			&	-	\\
-		5				& 1.77		& 32.48					& -			&	-	\\
-		10				& 1.00		& 17.67					& -			&	-	\\
+		1				& 3.15		& 72.56					& 3.10			&	70.89	\\
+		5				& 1.77		& 32.48					& 1.76			&	31.12	\\
+		10				& 1.00		& 17.67					& 0.98			&	14.89	\\
 		\toprule
 	\end{tabular}
 	\caption{Calculated and measured values in the RC circuit}
@@ -283,12 +283,12 @@ Calculated values for each pairing of resistor and inductor is summarized in tab
 	\centering
 	\begin{tabular}{c S S S S S S S S}
 		\toprule
-		& \multicolumn{2}{c}{$1 \mu H$}	& \multicolumn{2}{c}{$220 \mu H$} & \multicolumn{2}{c}{$470 \mu H$} & \multicolumn{2}{c}{$1000 \mu H$} \\
+		& \multicolumn{2}{c}{$1 \mu$H}	& \multicolumn{2}{c}{$220 \mu$H} & \multicolumn{2}{c}{$470 \mu$H} & \multicolumn{2}{c}{$1000 \mu$H} \\
 		\cline{2-9}
 		$R$ (k$\Omega$)	& \multicolumn{1}{c}{$I$ (mA)} 	& \multicolumn{1}{c}{$\theta$ ($^\circ$)} 	& \multicolumn{1}{c}{$I$ (mA)} 	& \multicolumn{1}{c}{$\theta$ ($^\circ$)}	& \multicolumn{1}{c}{$I$ (mA)} 	& \multicolumn{1}{c}{$\theta$ ($^\circ$)}	& \multicolumn{1}{c}{$I$ (mA)} 	& \multicolumn{1}{c}{$\theta$ ($^\circ$)} \\
 		\hline
 		1		& 10.50	& -0.18	& 8.64	& -34.65& 5.89	& -55.89& 3.18	& -72.34\\
-		5		& 2.10	& -0.04	& 2.01	& -7.87	& 2.01	& -16.45& 1.78	& -32.14\\
+		5		& 2.10	& -0.04	& 2.08	& -7.87	& 2.01	& -16.45& 1.78	& -32.14\\
 		10		& 1.05	& -0.02	& 1.05	& -3.95	& 1.04	& -8.40	& 1.00	& -17.44\\
 		\toprule
 	\end{tabular}
@@ -298,20 +298,21 @@ Calculated values for each pairing of resistor and inductor is summarized in tab
 
 \begin{table}[h]
 	\centering
-	\begin{tabular}{c c c c c c c c c}
+	\begin{tabular}{c S S S S S S S S}
 		\toprule
-		& \multicolumn{2}{c}{$1 \mu H$}	& \multicolumn{2}{c}{$220 \mu H$} & \multicolumn{2}{c}{$470 \mu H$} & \multicolumn{2}{c}{$1000 \mu H$} \\
+		& \multicolumn{2}{c}{$1 \mu$H}	& \multicolumn{2}{c}{$220 \mu$H} & \multicolumn{2}{c}{$470 \mu$H} & \multicolumn{2}{c}{$1000 \mu$H} \\
 		\cline{2-9}
 		$R$ (k$\Omega$)	& \multicolumn{1}{c}{$I$ (mA)} 	& \multicolumn{1}{c}{$\theta$ ($^\circ$)} 	& \multicolumn{1}{c}{$I$ (mA)} 	& \multicolumn{1}{c}{$\theta$ ($^\circ$)}	& \multicolumn{1}{c}{$I$ (mA)} 	& \multicolumn{1}{c}{$\theta$ ($^\circ$)}	& \multicolumn{1}{c}{$I$ (mA)} 	& \multicolumn{1}{c}{$\theta$ ($^\circ$)} \\
 		\hline
-		1		& -		& -		& -		& -		& -		& -		& -		& -	\\
-		5		& -		& -		& -		& -		& -		& -		& -		& - \\
-		10		& -		& -		& -		& -		& -		& -		& -		& - \\
+		1	& 3.00	& -84	& 9.00	& -36	& 6.00	& -63	& 3.18	& -82 \\
+		5	& 2.46	& -61	& 2.34	& -9	& 2.58	& -25	& 2.66	& -58 \\
+		10	& 2.01	& -51	& 1.17	& -5	& 1.41	& -13	& 2.01	& -42 \\
 		\toprule
 	\end{tabular}
 	\caption{Measured values in the RL circuit}
 	\label{table:rl_meas}
 \end{table}
+
 
 \section{Discussion and Conclusion}\label{sec:d_and_c}
 The discussion and conclusion should answer the questions that are posed in the procedure section of the experiment. Any special observations made by the student can be recorded here.
