@@ -48,10 +48,12 @@
 
 %% Units
 %% --------------------------
-%\usepackage{siunitx}
-%\usepackage{cancel}
+\usepackage{siunitx}			% has S (decimal align) column type
+\sisetup{input-symbols = {()},  % do not treat "(" and ")" in any special way
+         group-digits  = false} % no grouping of digits
 %\sisetup{load-configurations = abbreviations}
 %\sisetup{per-mode = symbol}
+%\usepackage{cancel}
 
 %% Misc
 %% --------------------------
@@ -192,8 +194,8 @@ A01 - B01\\[1.5cm]
 %			  TABLE OF CONTENTS
 %----------------------------------------------------------------------------
 
-\tableofcontents
-\pagebreak
+%\tableofcontents
+%\pagebreak
 
 %\listoffigures
 %\pagebreak
@@ -203,28 +205,49 @@ A01 - B01\\[1.5cm]
 %----------------------------------------------------------------------------
 
 \section{Object}\label{sec:object}
-The object of the experiment can be copied from the manual:
-\begin{itemize}
-	\item A list may be helpful
-	\item It makes things look neater
-	\item And requires less typing
-\end{itemize}
+This lab will study the steady-state responses of an RC and RL circuit when exposed to a purely sinusoidal voltage source. The current response and the phase shift of current relative to voltage will be calculated and compared with measured values.
 
 \section{Results}\label{sec:results}
-The results are basically an account of the experimental setup, methods of measurement and the results obtained. Simple circuit or block diagrams should be included in this section to explain the experimental procedure. The use of simple and clear diagrams is what distinguishes a good report from a poor one.
+An Agilent 33220A signal generator was used to create the sinusoidal voltage source used in this lab. A peak-to-peak voltage of 10V was used for both circuits. Different frequencies were used in each section and is discussed further in sections \ref{sec:rc} and \ref{sec:rl}.
+
+An Agilent DSOX-2012A oscilloscope was used to analyze the maximal current and phase shift.
 
 \subsection{RC Circuit}\label{sec:rc}
+The circuit was connected as show in figure \ref{fig:rc} using selectable capacitor and resistor boxes provided in the lab. A 5 nF capacitor was used in the circuit. A sinusoidal voltage source with a frequency 10 kHz was applied to the circuit.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.6]{RC_circuit}
+	\caption{The RC circuit used in the lab}
+	\label{fig:rc}
+\end{figure}
+
+The expected phase shift, with current leading voltage, is given by equation \eqref{eqn:rc_theta}, where $\omega = 2\pi f$. The expected maximum current is given by equation \eqref{eqn:rc_current}.
+
+\begin{equation}
+	\tan { \theta  } =\left( \frac { 1 }{ \omega RC }  \right) 
+	\label{eqn:rc_theta}
+\end{equation}
+
+\begin{equation}
+		I_{max}(t) = \frac{V_{max}(t)}{\sqrt{R^2 + (\frac{1}{C\omega})^2} }
+		\label{eqn:rc_current}
+\end{equation}
+
+\pagebreak
+The calculated and measured values of the current ($I$) and phase shift ($\theta$) are summarized in table \ref{table:rc}.
+
 \begin{table}[h]
 	\centering
 	\begin{tabular}{c c c c c}
 		\toprule
 		&				\multicolumn{2}{c}{Calculated}	& \multicolumn{2}{c}{Measured}	\\
 		\cline{2-5}
-		$R$ (k$\Omega$)	& $I$ (A) 	& $\Theta$ ($^\circ$) 	& $I$ (A) 	& $\Theta$ ($^\circ$) \\
+		$R$ (k$\Omega$)	& $I$ (mA) 	& $\theta$ ($^\circ$) 	& $I$ (mA) 	& $\theta$ ($^\circ$) \\
 		\hline
-		1				& -			& -						& -			&	-	\\
-		5				& -			& -						& -			&	-	\\
-		10				& -			& -						& -			&	-	\\
+		1				& 3.00		& 72.56					& -			&	-	\\
+		5				& 1.69		& 32.48					& -			&	-	\\
+		10				& 0.95		& 17.67					& -			&	-	\\
 		\toprule
 	\end{tabular}
 	\caption{Calculated and measured values in the RC circuit}
@@ -232,17 +255,41 @@ The results are basically an account of the experimental setup, methods of measu
 \end{table}
 
 \subsection{RL Circuit}\label{sec:rl}
+The circuit was connected as shown in figure \ref{fig:rl}. The resistor box was reused and discrete inductors were obtained from the lab (see tables \ref{table:rl_calc} and \ref{table:rl_meas}). The frequency of the voltage source was set to 500 kHz.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.6]{RL_circuit}
+	\caption{The RL circuit used in the lab}
+	\label{fig:rl}
+\end{figure}
+
+The expected phase shift of current with respect to voltage is given by equation \eqref{eqn:rl_theta}. The negative sign indicates that voltage will lead current. The expected maximum current is given by equation \eqref{eqn:rl_current}.
+
+\begin{equation}
+	\tan { \theta  } =\left( \frac { -\omega L }{ R }  \right) 
+	\label{eqn:rl_theta}
+\end{equation}
+
+\begin{equation}
+		I_{max}(t) = \frac{V_{max}(t)}{\sqrt{R^2 + L^2\omega^2}}
+		\label{eqn:rl_current}
+\end{equation}
+
+\pagebreak
+Calculated values for each pairing of resistor and inductor is summarized in table \ref{table:rl_calc}. Measured results are presented in table \ref{table:rl_meas}.
+
 \begin{table}[h]
 	\centering
-	\begin{tabular}{c c c c c c c c c}
+	\begin{tabular}{c S S S S S S S S}
 		\toprule
 		& \multicolumn{2}{c}{$1 \mu H$}	& \multicolumn{2}{c}{$220 \mu H$} & \multicolumn{2}{c}{$470 \mu H$} & \multicolumn{2}{c}{$1000 \mu H$} \\
 		\cline{2-9}
-		$R$ (k$\Omega$)	& $V$ (V) 	& $\Theta$ ($^\circ$) 	& $V$ (V) 	& $\Theta$ ($^\circ$)	& $V$ (V) 	& $\Theta$ ($^\circ$)	& $V$ (V) 	& $\Theta$ ($^\circ$) \\
+		$R$ (k$\Omega$)	& \multicolumn{1}{c}{$I$ (mA)} 	& \multicolumn{1}{c}{$\theta$ ($^\circ$)} 	& \multicolumn{1}{c}{$I$ (mA)} 	& \multicolumn{1}{c}{$\theta$ ($^\circ$)}	& \multicolumn{1}{c}{$I$ (mA)} 	& \multicolumn{1}{c}{$\theta$ ($^\circ$)}	& \multicolumn{1}{c}{$I$ (mA)} 	& \multicolumn{1}{c}{$\theta$ ($^\circ$)} \\
 		\hline
-		1		& -		& -		& -		& -		& -		& -		& -		& -	\\
-		5		& -		& -		& -		& -		& -		& -		& -		& - \\
-		10		& -		& -		& -		& -		& -		& -		& -		& - \\
+		1		& 10.00	& -0.18	& 8.23	& -34.65& 5.61	& -55.89& 3.03	& -72.34\\
+		5		& 2.00	& -0.04	& 1.98	& -7.87	& 1.92	& -16.45& 1.69	& -32.14\\
+		10		& 1.00	& -0.02	& 0.998	& -3.95	& 0.989	& -8.40	& 0.954	& -17.44\\
 		\toprule
 	\end{tabular}
 	\caption{Calculated values in the RL circuit}
@@ -255,7 +302,7 @@ The results are basically an account of the experimental setup, methods of measu
 		\toprule
 		& \multicolumn{2}{c}{$1 \mu H$}	& \multicolumn{2}{c}{$220 \mu H$} & \multicolumn{2}{c}{$470 \mu H$} & \multicolumn{2}{c}{$1000 \mu H$} \\
 		\cline{2-9}
-		$R$ (k$\Omega$)	& $V$ (V) 	& $\Theta$ ($^\circ$) 	& $V$ (V) 	& $\Theta$ ($^\circ$)	& $V$ (V) 	& $\Theta$ ($^\circ$)	& $V$ (V) 	& $\Theta$ ($^\circ$) \\
+		$R$ (k$\Omega$)	& \multicolumn{1}{c}{$I$ (mA)} 	& \multicolumn{1}{c}{$\theta$ ($^\circ$)} 	& \multicolumn{1}{c}{$I$ (mA)} 	& \multicolumn{1}{c}{$\theta$ ($^\circ$)}	& \multicolumn{1}{c}{$I$ (mA)} 	& \multicolumn{1}{c}{$\theta$ ($^\circ$)}	& \multicolumn{1}{c}{$I$ (mA)} 	& \multicolumn{1}{c}{$\theta$ ($^\circ$)} \\
 		\hline
 		1		& -		& -		& -		& -		& -		& -		& -		& -	\\
 		5		& -		& -		& -		& -		& -		& -		& -		& - \\
