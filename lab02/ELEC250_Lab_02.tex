@@ -24,6 +24,7 @@
 %% --------------------------
 \usepackage{graphicx}			% allow insertion of images
 \graphicspath{ {./graphics/} }		% the relative path to the graphics folder
+\usepackage{subfigure}			% allows subfigures (a), (b), etc
 %\usepackage{tikz}				% vector graphics
 %\usepackage{pgfplots}			% plots in vector graphics
 
@@ -42,7 +43,7 @@
 \usepackage{fancyhdr}			% see config in LAYOUT AND STYLING
 \usepackage{fullpage}			% set full page margins
 %sideways figures
-%\usepackage{rotating}
+\usepackage{rotating}
 %\usepackage{pdflscape}
 %\usepackage{parskip}			% disable indents
 
@@ -322,6 +323,59 @@ The RL series circuit performed as expected for the 220 $\mu$H with the 470 $\mu
 The 1 $\mu$H inductor circuit, whether combined with the 1 k$\Omega$, 5 k$\Omega$, or the 10 k$\Omega$ resistors, provided results that appeared nearest to the values expected of a 1 mH inductor. This part of the experiment was performed with two different 1 $\mu$H inductors that yielded similar results. Possible justification for these discrepancies include: (a)\textit{ faulty components:} in this case, both 1 $\mu$H inductors must be faulty; or, (b)\textit{ mislabeled inductors:} the difference between the symbol for $mH$ and $\mu$H may be difficult to differentiate when handwritten on heat shrink.
 
 Connection points, wires, measuring devices (oscilloscope), and heat contributed to the added resistance observed in the circuit. Also the discrepancies between measured and calculated values could be attributed to the use of non-ideal components; each circuit component adds a degree of uncertainty. However, capacitors are more predictable than inductors when connected to a circuit. This could be due to a by-product of heat produced within an inductor, or the improved accuracy of mass-producing capacitors versus inductors.
+
+\section{Appendices}\label{sec:appendices}
+Included in indicated page range.
+\subsection{RC Circuit Measurements}\label{sec:rc_meas}
+Page 5.
+\subsection{RL Circuit Measurements}\label{sec:rl_meas}
+Pages 6 to 8.
+
+\pagebreak
+\begin{sidewaysfigure}
+	\centering	
+		\subfigure[1 k$\Omega$]{\includegraphics[width=0.475\textwidth]{scope_0}} \quad
+		\subfigure[5 k$\Omega$]{\includegraphics[width=0.475\textwidth]{scope_1}}
+		\subfigure[10 k$\Omega$]{\includegraphics[width=0.475\textwidth]{scope_2}}
+	\caption{RC circuit measurements}
+	\label{fig:rc_meas}
+\end{sidewaysfigure}
+
+\pagebreak
+
+\begin{sidewaysfigure}
+	\centering	
+		\subfigure[1 $\mu$H]{\includegraphics[width=0.475\textwidth]{scope_3}} \quad
+		\subfigure[220 $\mu$H]{\includegraphics[width=0.475\textwidth]{scope_6}} \quad
+		\subfigure[470 $\mu$H]{\includegraphics[width=0.475\textwidth]{scope_9}} \quad
+		\subfigure[1000 $\mu$H]{\includegraphics[width=0.475\textwidth]{scope_12}}
+	\caption{RL circuit measurements for 1 k$\Omega$ resistor}
+	\label{fig:rl_meas_1k}
+\end{sidewaysfigure}
+
+\pagebreak
+
+\begin{sidewaysfigure}
+	\centering	
+		\subfigure[1 $\mu$H]{\includegraphics[width=0.475\textwidth]{scope_4}} \quad
+		\subfigure[220 $\mu$H]{\includegraphics[width=0.475\textwidth]{scope_7}} \quad
+		\subfigure[470 $\mu$H]{\includegraphics[width=0.475\textwidth]{scope_10}} \quad
+		\subfigure[1000 $\mu$H]{\includegraphics[width=0.475\textwidth]{scope_13}}
+	\caption{RL circuit measurements for 5 k$\Omega$ resistor}
+	\label{fig:rl_meas_5k}
+\end{sidewaysfigure}
+
+\pagebreak
+
+\begin{sidewaysfigure}
+	\centering	
+		\subfigure[1 $\mu$H]{\includegraphics[width=0.475\textwidth]{scope_5}} \quad
+		\subfigure[220 $\mu$H]{\includegraphics[width=0.475\textwidth]{scope_8}} \quad
+		\subfigure[470 $\mu$H]{\includegraphics[width=0.475\textwidth]{scope_11}} \quad
+		\subfigure[1000 $\mu$H]{\includegraphics[width=0.475\textwidth]{scope_14}}
+	\caption{RL circuit measurements for 10 k$\Omega$ resistor}
+	\label{fig:rl_meas_10k}
+\end{sidewaysfigure}
 
 %----------------------------------------------------------------------------
 %----------------------------------------------------------------------------
