@@ -48,10 +48,13 @@
 
 %% Units
 %% --------------------------
-%\usepackage{siunitx}
-%\usepackage{cancel}
+\usepackage{siunitx}			% has S (decimal align) column type
+\sisetup{input-symbols = {()},  % do not treat "(" and ")" in any special way
+         group-digits  = false} % no grouping of digits
 %\sisetup{load-configurations = abbreviations}
 %\sisetup{per-mode = symbol}
+%\usepackage{cancel}
+
 
 %% Misc
 %% --------------------------

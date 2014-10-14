@@ -208,7 +208,7 @@ A01 - B01\\[1.5cm]
 This lab will study the steady-state responses of an RC and RL circuit when exposed to a purely sinusoidal voltage source. The current response and the phase shift of current relative to voltage will be calculated and compared with measured values.
 
 \section{Results}\label{sec:results}
-An Agilent 33220A signal generator was used to create the sinusoidal voltage source used in this lab. A peak-to-peak voltage of 10.5V was used for both circuits. Different frequencies were used in each section and is discussed further in sections \ref{sec:rc} and \ref{sec:rl}.
+An Agilent 33220A signal generator was used to create the sinusoidal voltage source used in this lab. A peak-to-peak voltage of 10.5 V was used for both circuits. Different frequencies were used in each section and is discussed further in sections \ref{sec:rc} and \ref{sec:rl}.
 
 An Agilent DSOX-2012A oscilloscope was used to analyze the maximal current and phase shift.
 
@@ -230,7 +230,7 @@ The expected phase shift, with current leading voltage, is given by equation \eq
 \end{equation}
 
 \begin{equation}
-		I_{max}(t) = \frac{V_{max}(t)}{\sqrt{R^2 + (\frac{1}{C\omega})^2} }
+		I_{max} = \frac{V_{max}}{\sqrt{R^2 + (\frac{1}{C\omega})^2} }
 		\label{eqn:rc_current}
 \end{equation}
 
@@ -272,7 +272,7 @@ The expected phase shift of current with respect to voltage is given by equation
 \end{equation}
 
 \begin{equation}
-		I_{max}(t) = \frac{V_{max}(t)}{\sqrt{R^2 + L^2\omega^2}}
+		I_{max} = \frac{V_{max}}{\sqrt{R^2 + L^2\omega^2}}
 		\label{eqn:rl_current}
 \end{equation}
 
@@ -315,131 +315,7 @@ Calculated values for each pairing of resistor and inductor is summarized in tab
 
 
 \section{Discussion and Conclusion}\label{sec:d_and_c}
-The RC series circuit performed as expected. Minor discrepancies in phase shift and circuit current were observed which could be attributed to the use of non-ideal components that introduce a factor of uncertainty. 
 
-The RL series circuit performed nearly as expected for the $220\mu H$ with the $470\mu H$ and $1mH$ varying slightly. The discrepancies between measured and calculated values could be attributed to: \textit{(a)heat:} results in added resistance produced by the components, and \textit{(b)use of non-ideal components:} each circuit component adds a degree of uncertainty. 
-
-The $1\mu H$ inductor circuit, whether combined with the $1k\Omega$, $5k\Omega$, or the $10k\Omega$ resistors, provided results that appeared nearest to the values expected of a $1m H$. This part of the experiment was performed with two different inductors that yielded similar results. Possible justification for these discrepancies include: \textit{(a)faulty components:} in this case, both $1\mu H$ inductors must be faulty, or \textit{(b)mislabeled inductors:} the difference between the symbol for $mH$ and $\mu H$ may be difficult to differentiate when handwritten on heat shrink.
-
-Capacitors are more predictable than inductors when connected to a circuit. This could be due to a by-product of heat produced within an inductor, or the improved accuracy of mass-producing capacitors versus inductors.
-
-
-
-%----------------------------------------------------------------------------
-%				  LaTeX TIPS
-%----------------------------------------------------------------------------
-
-\pagebreak
-
-\section{LaTeX Tips}\label{sec:tips}
-Check the source file for additional information in the comments.
-\subsection{Symbols}\label{sec:symbols}
-Most math symbols and all equations are bounded by \$ delimiters. \verb|$ A=\pi r^{2} $| produces $ A=\pi r^{2} $. To find the appropriate symbol you will have to use a LaTeX IDE with a built in symbol editor or use another program to produce the code and copy-and-paste it into your document.
-
-\subsection{Figures}\label{sec:figures}
-\begin{verbatim}
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.75\textwidth]{Uvic_logo}
-	\caption{A logo used by the University of Victoria}
-	\label{fig:uvic_logo}
-\end{figure}
-\end{verbatim}
-
-\begin{figure}[h] 	% placement in document [htbp]: here, top, bottom, special page
-	\centering		% centers the image
-	\includegraphics[width=0.75\textwidth]{Uvic_logo} 	
-		% will search root directory and anything listed
-		% in \graphicspath for the image
-		% it is common to specify [width=0.5\textwidth] as an agument
-		% \textwidth can be used as a variable for the entire pagewidth.
-		% 0.5\textwidth refers to 50% of the page.
-	\caption{A logo used by the University of Victoria}
-	\label{fig:uvic_logo}
-\end{figure}
-
-A good tutorial for the use of figures can be found at: \url{http://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions}
-
-\pagebreak
-\subsection{Tables}\label{sec:tables}
-\begin{verbatim}
-\begin{table}[h]
-	\centering
-	\begin{tabular}{llr}
-		\hline
-		\multicolumn{2}{c}{Item} \\
-		\cline{1-2}
-			Animal   	& Description 	& Price (\$) \\
-		\hline
-			Gnat		& per gram	& 13.65      \\
-				        & each       	& 0.01       \\
-			Gnu		& stuffed     	& 92.50      \\
-			Emu		& stuffed		& 33.33      \\
-			Armadillo	& frozen		& 8.99       \\
-		\hline
-	\end{tabular}
-	\caption{Exotic meat prices}
-	\label{table:meats}
-\end{table}
-\end{verbatim}
-
-\begin{table}[h]			% placement in document [htbp]: [h]ere, [t]op, [b]ottom, special [p]age
-	\centering
-	\begin{tabular}{llr}	% specifies the number of columns and their justification
-					% columns can be [l]eft-justified, [c]entered, [r]ight-justified
-					% the number of arguments after {tabular} corresponds to the number of columns
-					% vertical lines can be added by placing | vertical bars in the argument
-					% e.g. { | c c c | } has three centered columns with vertical lines at the ends
-					% of the table
-					% { | c | c | c | } has vertical lines separating all cells
-
-		\hline		% a horizontal line
-		
-		\multicolumn{2}{c}{Item} \\		% {number of columns to span}{lcr}{title}
-								% \\ indicates the end of a line
-								
-		\cline{1-2}		% \cline[ i - j } : line that spans columns i to j
-		
-			Animal   	& Description 	& Price (\$) \\	% & separates data between cells
-											% && indicates a blank cell
-											% \\ must end every row
-		\hline
-			Gnat		& per gram		& 13.65      \\
-				    	& each      	 	& 0.01       \\
-			Gnu		& stuffed     	& 92.50      \\
-			Emu		& stuffed		& 33.33      \\
-			Armadillo	& frozen		& 8.99       \\
-		\hline
-	\end{tabular}
-	\caption{Exotic meat prices}
-	\label{table:meats}
-\end{table}
-\textit{Apparently} tables are more readable if the vertical rulings are omitted. I'm inclined to agree.\\
-A good tutorial for the use of tables can be found at: \url{http://en.wikibooks.org/wiki/LaTeX/Tables}
-
-\subsection{Labels and References}\label{sec:labels_and_refs}
-LaTeX's dynamic referencing system gives it an advantage over other multi-user document tools. References point to assigned labels rather than a pre-defined numbering. Changing the order and number of references will leave the citations untouched if label referencing is used.
-
-
-The \verb|\label{}| tag should be attached to all sections, figures and tables. To reference these elements, use the \verb|\ref{}| command. To reference the table in Section \ref{sec:tables}, you would write \verb|Table \ref{table:meats}| which will appear as Table \ref{table:meats}.
-
-
-A consistent naming schema will make collaboration easier. Labels should be implemented with the corresponding prefix:
-\begin{table}[h]
-	\centering
-	\begin{tabular}{ l l }
-	Sections		& \verb|{sec:}|		\\
-	Figures		& \verb|{fig:}|		\\
-	Tables		& \verb|{table:}|		\\
-	\end{tabular}
-\end{table}
-
-You may encounter a situation where a citation or page number appears as \verb|??|. This often occurs when major changes have occured to the reference or page order. The LaTeX compiler requires two executions of the typesetting function to correctly address the references: one to build the .aux file and another to read from it. The compiler is often nice enouch to pass a warning when the .aux file has undergone significant changes to its references and prompts you do another typesetting.
-
-\subsection{Resources}\label{sec:resources}
-\begin{itemize}
-	\item \underline{\href{https://www.youtube.com/user/14mech14/videos}{Video playlist} } from McMaster that covers the installation and use of LaTeX. Uses TeXShop for examples. Covers document setup, tables, figures, bibliographies and some other stuff I haven't watched yet.
-\end{itemize}
 
 %----------------------------------------------------------------------------
 %----------------------------------------------------------------------------
