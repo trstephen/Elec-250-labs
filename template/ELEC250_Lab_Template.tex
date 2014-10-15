@@ -48,10 +48,13 @@
 
 %% Units
 %% --------------------------
-%\usepackage{siunitx}
-%\usepackage{cancel}
+\usepackage{siunitx}			% has S (decimal align) column type
+\sisetup{input-symbols = {()},  % do not treat "(" and ")" in any special way
+         group-digits  = false} % no grouping of digits
 %\sisetup{load-configurations = abbreviations}
 %\sisetup{per-mode = symbol}
+%\usepackage{cancel}
+
 
 %% Misc
 %% --------------------------
@@ -149,7 +152,7 @@
 Dr. Nikitas \textsc{Dimopoulos} \\
 \vspace{12 pt}
 \emph{Teaching Assistant:} \\
-Zhen \textsc{Li}
+Zhen \textsc{Liu}
 
 \end{flushleft}
 \end{minipage}
@@ -233,7 +236,7 @@ Most math symbols and all equations are bounded by \$ delimiters. \verb|$ A=\pi 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.75\textwidth]{Uvic_logo}
-	\caption{A logo used by the Univesity of Victoria}
+	\caption{A logo used by the University of Victoria}
 	\label{fig:uvic_logo}
 \end{figure}
 \end{verbatim}
@@ -246,7 +249,7 @@ Most math symbols and all equations are bounded by \$ delimiters. \verb|$ A=\pi 
 		% it is common to specify [width=0.5\textwidth] as an agument
 		% \textwidth can be used as a variable for the entire pagewidth.
 		% 0.5\textwidth refers to 50% of the page.
-	\caption{A logo used by the Univesity of Victoria}
+	\caption{A logo used by the University of Victoria}
 	\label{fig:uvic_logo}
 \end{figure}
 
