@@ -211,6 +211,9 @@ A01 - B01\\[1.5cm]
 This lab will study the transient response of an RC and an RL circuit.
 
 \section{Results}\label{sec:results}
+An Agilent 33220A signal generator was used to create the momentary single pulse excitation, while an Agilent DSOX-2012A oscilloscope was used to analyze transient responses of the RC and RL circuits. 
+
+
 \subsection{RC Circuit}\label{sec:rc}
 The circuit was constructed as shown in Figure \ref{fig:rc_circuit} and excited using a 5 V$_{pp}$ single pulse source for a duration of 5ms. 
 \begin{figure}[h]
@@ -246,10 +249,14 @@ The expected value of the time constant $\tau$ is given by
 	\tau = \frac{L}{R}
 \end{equation}
 
-Using \eqref{eqn:tau_rl}, the expected value of $\tau$ is 1.4$\mu$s. By measuring the time it took for $v_R$ to rise to 67.75\% of its final val in Figure \ref{fig:rl_meas}.c, $\tau$ was determined to be 1.4$\mu$s. The time for $v_L$ to decay to 37.25\% of its original value in Figure \ref{fig:rl_meas}.d yielded a $\tau$ of 1.34$\mu$s.
+Using \eqref{eqn:tau_rl}, the expected value of $\tau$ is 1.4$\mu$s. By measuring the time it took for $v_R$ to rise to 67.75\% of its final value in Figure \ref{fig:rl_meas}.c, $\tau$ was determined to be 1.4$\mu$s. The time for $v_L$ to decay to 37.25\% of its original value in Figure \ref{fig:rl_meas}.d yielded a $\tau$ of 1.34$\mu$s.
 
 \section{Discussion and Conclusion}\label{sec:d_and_c}
-The discussion and conclusion should answer the questions that are posed in the procedure section of the experiment. Any special observations made by the student can be recorded here.
+The RC and RL circuits performed as expected with respect to their natural responses. One time constant $\tau$ is equivalent to the time an RC or RL circuit takes to reach 37.25\% of its original voltage. 
+
+The time constant $\tau$ was measured to be 480$\mu$s and 1.34$\mu$s, which can be verified in Figure \ref{fig:rc_meas}.c and \ref{fig:rl_meas}.d, for the RC and RL circuits respectively. Similarly, $\tau$ was estimated to be 480$\mu$s and 1.40$\mu$s using equations  \eqref{eqn:tau_rc} and  \eqref{eqn:tau_rl} for the RC and RL circuits respectively. 
+
+While the RC circuit performed exactly as expected, the RL yielded a slight inaccuracy of 4.29\%. The physical inductor doesn't perform ideally, which can be observed in Figures  \ref{fig:rl_meas}(a through d). At the beginning and end of each cycle, for a brief moment, a spike in voltage can be observed where the inductor creates the counter-electromotive force necessary to oppose current. The spike is responsible for the inaccuracy measured in the RL circuit.
 
 \pagebreak
 %% I can't find a way to fit the title and images on the same page... no matter how small the images are.
