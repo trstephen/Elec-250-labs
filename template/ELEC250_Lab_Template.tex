@@ -24,6 +24,7 @@
 %% --------------------------
 \usepackage{graphicx}			% allow insertion of images
 \graphicspath{ {./graphics/} }		% the relative path to the graphics folder
+\usepackage{subfigure}			% allows subfigures (a), (b), etc
 %\usepackage{tikz}				% vector graphics
 %\usepackage{pgfplots}			% plots in vector graphics
 
@@ -42,9 +43,10 @@
 \usepackage{fancyhdr}			% see config in LAYOUT AND STYLING
 \usepackage{fullpage}			% set full page margins
 %sideways figures
-%\usepackage{rotating}
+\usepackage{rotating}
 %\usepackage{pdflscape}
-%\usepackage{parskip}			% disable indents
+\usepackage{parskip}			% disable indents
+\usepackage{subfigure}			% allows for subfigures to have their own label
 
 %% Units
 %% --------------------------
@@ -135,7 +137,7 @@
 % Header
 \textsc{\LARGE University of Victoria}\\[1cm] 	% Name of your university/college
 \textsc{\Large ELEC 250}\\[0.5cm] 			% Major heading such as course name
-\textsc{\large Linear Circuits: 1}\\[0.5cm] 		% Minor heading such as course title
+\textsc{\large Linear Circuits I}\\[0.5cm] 		% Minor heading such as course title
 
 
 % Lab Title
