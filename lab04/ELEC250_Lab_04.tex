@@ -87,6 +87,9 @@
 % I'm sick of writing rms in subscript
 \newcommand{\rms}{\ensuremath{_{rms}}}
 
+% easy unit spacing in math mode
+\providecommand{\units}[1]{\;\text{#1}}
+
 %----------------------------------------------------------------------------
 %		   	LAYOUT AND STYLING
 %----------------------------------------------------------------------------
@@ -219,34 +222,69 @@ This lab will study series resonance as well as the measurement of power in a ci
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.75]{resonance_diagram}
-	\caption{Circuit diagram of resonant RLC circuit \\ $L$ = 1.00 mH, $C$ = 22 nF, $R$ = 43.50 $\Omega$}
+	\caption{Circuit diagram of resonant RLC circuit \\ $L$ = 1.00 mH, $C$ = 22 nF, $R$ = 43 $\Omega$}
 	\label{fig:res_diagram}
 \end{figure}
+The circuit was assembled as shown in Figure \ref{fig:res_diagram}. The value of R required to give the circuit a quality factor, Q, of 5 was found by
+\begin{equation*}
+R=\frac{1}{Q}\sqrt{\frac{L}{C}}=\frac{1}{5}\sqrt{\frac{1.0\units{mH}}{22\units{nF}}}=43\units{$\Omega$}
+\end{equation*} 
+
+The source voltage and voltage across R were displayed on the oscilloscope. The frequency of the signal generator was increased from 10$\to$50\units{kHz}, with extra measurements taken around the resonant frequency.
+
+The values of R, L, and C in this circuit determine several characteristics.
+
+The resonant frequency, $f_0$, is given by
+\begin{equation*}
+	f_{0}=\frac{1}{2\pi\sqrt{LC}}=\frac{1}{2\pi\sqrt{(1.0\units{mH})(22\units{nF})}}=33.932\units{kHz}
+\end{equation*}\
+The 3dB frequencies were calculated via the next two equations
+\begin{equation*}
+	f_{1}=\frac{R}{4\pi L}\left[\sqrt{1+\frac{4L}{R^{2}C}}-1\right] = 30.682\units{kHz} 
+\end{equation*}
+\begin{equation*}
+	f_{2}=\frac{R}{4\pi L}\left[\sqrt{1+\frac{4L}{R^{2}C}}+1\right] = 37.526\units{kHz} 
+\end{equation*}
+Giving a bandwidth B of
+\begin{equation*}
+	B=f_{2}-f_{1}=6.844\units{kHz}
+\end{equation*}
 
 \subsection{Results}\label{sec:res_results}
-Table \ref{table:resonance} is located at the end of this report.
-
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.5]{resonance_plot}
 	\caption{Current through RLC circuit as frequency passes through resonance}
-	\label{figure:res_graph}
+	\label{fig:res_graph}
 \end{figure}
-
-find $f_0$, $f_1$, $f_2$, $B$ by interpolating the graph. (hint, using the data table will be the best way to find $f_1$ and $f_2$ since we know they occur at $\theta = \pm45^{\circ}$)
+Figure \ref{fig:res_graph} shows the response of the current in the circuit to a change in the source frequency. The peak of the graph indicates the resonant frequency as 34.576\units{kHz}. By using Figure \ref{fig:res_graph} and the associated table of values (Table \ref{table:resonance}) the 3 dB frequencies $f_1$ and $f_2$ can be interpolated. The 3dB frequencies occur when $\theta = \pm 45^{\circ}$. This method gives approximations for the frequencies and bandwidth as:
+\begin{align*}
+	f_1 &\approx 30.75\units{kHz} \\
+	f_2 &\approx 38.75\units{kHz} \\
+	B &\approx 8.00\units{kHz}
+\end{align*}
+Using these values, the Q value of the circuit becomes
+\begin{equation*}
+Q=\frac{f_{0}}{B}=4.322
+\end{equation*} 
 
 \subsection{Discussion}\label{sec:res_discussion}
-How do $f_0$, $f_1$, $f_2$, $B$ compare with expected values?
+The measured value of the resonant frequency $f_0$ is very consistent, with the calculated value being 98\% of the measured value. 
+
+The measured bandwidth was larger than expected. An explanation for this discrepancy may be obtained from the equations for $f_1$ and $f_2$. If the resistance in the circuit is increased then the 3dB frequencies spread out from the resonant frequency. Additional resistance in the circuit is the likely cause of this discrepancy. Experiment 2 indicated that the non-ideal nature of the circuit components will have a measurable effect on the experiment.
+This discrepancy resulted in a measured Q of 4.322 which is only 86\% of the desired Q of 5. 
+
+An interesting aspect observed from taking measurements over a large frequency range was that the phase between the source and resistor voltages. The phase difference changed from a ninety degree negative shift, to zero at the resonant frequency, then up to a ninety degree positive shift above $f_{0}$. Another important observation was that the phase shift was forty five degrees at $f_{1}$ and $f_{2}$, the 3dB down frequencies.\\
 
 \section{Power Measurement}\label{sec:power}
 \subsection{Procedure}\label{sec:pow_procedure}
-The power factor $pf$ is the ratio of true versus apparent power. A leading $pf$ is achieved in an $RC$ circuit, while a lagging $pf$ is the result of a $RL$ circuit. In this section, two experiments were performed where a leading and lagging $pf$ were obtained separately. The block diagram in Figure \ref {fig:comp_diagram} represents the physical setup of the experiment that includes: 
+The power factor $pf$ is the ratio of true versus apparent power. A leading $pf$ is achieved in an RC circuit, while a lagging $pf$ is the result of a RL circuit. In this section, two experiments were performed where a leading and lagging $pf$ were obtained separately. The block diagram in Figure \ref{fig:comp_diagram} represents the physical setup of the experiment that includes: 
 \begin{itemize}
-	\item high-wattage component board that carries a 200$\Omega$ resistor, a 300$m$H inductor, and a 10$\mu$F capacitor
-	\item variac with an isolation transformer used to reduce the voltage to 50V$_{rms}$
-	\item a wattmeter between the isolation transformer and the component board to measure real power (shown in Figure \ref {fig:pf_circuit}). 
+	\item high-wattage component board that carries a 200\units{$\Omega$} resistor, a 300\units{mH} inductor, and a 10\units{$\mu$F} capacitor
+	\item variac with an isolation transformer used to reduce the voltage to 50V\rms
+	\item a wattmeter between the isolation transformer and the component board to measure real power (shown in Figure \ref{fig:pf_circuit}). 
 \end{itemize}
-Figure \ref {fig:pf_circuit} represents the wiring diagram for the $RC$ circuit; the $RL$ circuit is similar with the substitution of and inductor $L$ in place of the capacitor $C$.
+Figure \ref {fig:pf_circuit} represents the wiring diagram for the RC circuit; the RL circuit is similar with the substitution of and inductor $L$ in place of the capacitor $C$.
 
 \begin{figure}[h]
 	\centering
@@ -258,7 +296,7 @@ Figure \ref {fig:pf_circuit} represents the wiring diagram for the $RC$ circuit;
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.75]{pf_circuit}
-	\caption{$RC$ $pf$ measurement circuit setup}
+	\caption{RC $pf$ measurement circuit setup}
 	\label{fig:pf_circuit}
 \end{figure}
 
@@ -273,14 +311,14 @@ First, power consumption was measured in an $RC$ circuit. With a 200$\Omega$ res
 	\label{eqn:P}
 \end{equation}
 
-the true power $P$ can be calculated to be 4.52W. Similarly, the apparent power $S$ can be calculated using the equation,
+the true power $P$ can be calculated to be 4.52 W. Similarly, the apparent power $S$ can be calculated using the equation,
 
 \begin{equation}
 	S = {V_{rms}}{I_{rms}}
 	\label{eqn:S} 
 \end{equation}
 
-which results in $S$ = 7.54VA. The $pf$ can be estimated using 
+which results in $S$ = 7.54 VA. The $pf$ can be estimated using 
 
 \begin{equation}
 	pf = \frac{P}{S}
@@ -294,7 +332,7 @@ which yeilds a result of 0.6034. The $pf$ was then be measured to be 0.6019 by t
 	\label{eqn:pf_rms}
 \end{equation}
 
-The relationship of the reactive power $Q$, true power $P$, and apparent power $S$ is represented by the following equation, which results in $Q$ = 6.014VAR.
+The relationship of the reactive power $Q$, true power $P$, and apparent power $S$ is represented by the following equation, which results in $Q$ = 6.014 VAR.
 
 \begin{equation}
 	Q = \sqrt{S^2 - P^2}
@@ -303,13 +341,13 @@ The relationship of the reactive power $Q$, true power $P$, and apparent power $
 
 This equation can be visualized by a right-angle triangle where $S$ is the hypothenuse.
 
-Second, an $RL$ circuit was constructed with a 200$\Omega$ resistor, a 300 $m$H inductor, and the voltage set to 50.09V$_{rms}$. A digital multimeter (DMM) placed across the resistor indicated V$_R$ = 36.10V$_{rms}$. The wattmeter in turn measured a current of 181.5$m$A with true power consumption of 7.16W; however, using equation \ref{eqn:P}, the true power $P$ was expected to be 6.52W. 
+Second, an RL circuit was constructed with a 200 $\Omega$ resistor, a 300 mH inductor, and the voltage set to 50.09 V\rms. A digital multimeter (DMM) placed across the resistor indicated V$_R$ = 36.10 V\rms. The wattmeter in turn measured a current of 181.5 mA with true power consumption of 7.16 W; however, using equation \ref{eqn:P}, the true power $P$ was expected to be 6.52 W. 
 
-With the relationship of equation \ref{eqn:S}, the apparent power results in $S$ = 9.09VA.
+With the relationship of equation \ref{eqn:S}, the apparent power results in $S$ = 9.09 VA.
 
 A $pf$ of 0.7876 is estimated and expected using equation \ref{eqn:pf}; nevertheless, the value of the $pf$ measured to be 0.7207 using the relationship of equation \ref{eqn:pf_rms}.
 
-Using equation \ref{eqn:Q}, there appears to be 5.602VAR of reactive power $Q$ in the circuit.
+Using equation \ref{eqn:Q}, there appears to be 5.602 VAR of reactive power $Q$ in the circuit.
 
 
 \begin{table}[h]
@@ -325,7 +363,7 @@ Using equation \ref{eqn:Q}, there appears to be 5.602VAR of reactive power $Q$ i
 		\textcol{$measured$} & 
 		\textcol{$\frac{V_R ^2}{R}$} &  
 		\textcol{$\frac{P}{S}$} & 
-		\textcol{$\frac{V_R}{Vrms}$} \\ 
+		\textcol{$\frac{V_R}{V\rms}$} \\ 
 	\midrule
 		RC	& 49.94	& 151.0	& 30.06	& 6.014	& 4.55	& 4.54	& 0.6034	& 0.6019	\\
 		RL	& 50.09	& 181.5	& 36.10 & 5.602	& 7.16	& 6.55	& 0.7876	& 0.7207 	\\ 
@@ -336,12 +374,13 @@ Using equation \ref{eqn:Q}, there appears to be 5.602VAR of reactive power $Q$ i
 \end{table}
 
 \subsection{Discussion}\label{sec:pow_discussion}
-The $RC$ circuit yielded similar results to those expected. In this circuit the difference between measured and calculated real power $P$ and power factor $pf$ was 0.664\% and 0.249\% respectively, which is negligible and expected when using non-ideal components.
+The RC circuit yielded similar results to those expected. In this circuit the difference between measured and calculated real power $P$ and power factor $pf$ was 0.664\% and 0.249\% respectively, which is negligible and expected when using non-ideal components.
 
-The $RL$ circuit, however, showed bigger discrepancies. The difference between measured and calculated $P$ and $pf$ was 8.94\% and 8.49\% respectively. From past experiments, these results can be expected due to the nature of inductors. Heat, a by-product of current and resistance, will increase internal resistance of the inductor which ultimately skews the results.
+The RL circuit, however, showed larger discrepancies. The difference between measured and calculated P and pf was 8.94\% and 8.49\% respectively. From past experiments, these results can be expected due to the nature of inductors. Heat, a by-product of current and resistance, will increase internal resistance of the inductor which ultimately skews the results.
 
 
 \section{Conclusion}\label{sec:conclusion}
+The investigation of the RLC circuit confirmed that the current through the circuit is at a maximum when it is excited by a source at its resonant frequency. With consideration given to the non-ideal nature of the components, the choice of a 43\units{$\Omega$} resistor yielded a quality factor of approximately 5.
 
 In the power measurement experiment, the wattmeter was confirmed to indicate the true power consumed by the circuit. Excess current may enter and circulate the circuit due to capacitors and inductors, but it is not consumed or transformed; it simply is the result of a current that leads or lags the voltage. 
 
