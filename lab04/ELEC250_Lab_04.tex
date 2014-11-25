@@ -240,7 +240,13 @@ How do $f_0$, $f_1$, $f_2$, $B$ compare with expected values?
 
 \section{Power Measurement}\label{sec:power}
 \subsection{Procedure}\label{sec:pow_procedure}
-The power factor $pf$ is the ratio of true versus apparent power. A leading $pf$ is achieved in an $RC$ circuit, while a lagging $pf$ is the result of a $RL$ circuit. Two experiments were performed where a leading and lagging $pf$ were obtained separately. The block diagram in Figure \ref {fig:comp_diagram} represents the physical setup of the experiment: $(a)$ a high-wattage component board that carries a 200$\Omega$ resistor, a 300$m$H inductor, and a 10$\mu$F capacitor, $(b)$ a variac with an isolation transformer used to reduce the voltage to 50V$_{rms}$, and $(c)$ (not shown) a wattmeter between the isolation transformer and the component board to measure real power. The diagram in Figure \ref {fig:pf_circuit} represents the electrical $RC$ circuit; the $RL$ circuit is similar with the substitution of and inductor $L$ in place of the capacitor $C$.
+The power factor $pf$ is the ratio of true versus apparent power. A leading $pf$ is achieved in an $RC$ circuit, while a lagging $pf$ is the result of a $RL$ circuit. In this section, two experiments were performed where a leading and lagging $pf$ were obtained separately. The block diagram in Figure \ref {fig:comp_diagram} represents the physical setup of the experiment that includes: 
+\begin{itemize}
+	\item high-wattage component board that carries a 200$\Omega$ resistor, a 300$m$H inductor, and a 10$\mu$F capacitor
+	\item variac with an isolation transformer used to reduce the voltage to 50V$_{rms}$
+	\item a wattmeter between the isolation transformer and the component board to measure real power (shown in Figure \ref {fig:pf_circuit}). 
+\end{itemize}
+Figure \ref {fig:pf_circuit} represents the wiring diagram for the $RC$ circuit; the $RL$ circuit is similar with the substitution of and inductor $L$ in place of the capacitor $C$.
 
 \begin{figure}[h]
 	\centering
@@ -258,28 +264,30 @@ The power factor $pf$ is the ratio of true versus apparent power. A leading $pf$
 
 \subsection{Results}\label{sec:pow_results}
 
-The first part, a $RC$ circuit was constructed to measure its power consumption. With a 200$\Omega$ resistor, a 10$\mu$F capacitor, and the voltage set to 49.94V$_{rms}$, the wattmeter measured a current of 151.0$m$A with power consumption of 4.55W. A digital multimeter (DMM) placed across the resistor indicated V$_R$ = 30.06V$_{rms}$. Using the equation
+Table \ref{table:power} is a summary of the values obtained in this section.
+
+First, power consumption was measured in an $RC$ circuit. With a 200$\Omega$ resistor, a 10$\mu$F capacitor, and the voltage set to 49.94V$_{rms}$, the wattmeter measured a current of 151.0$m$A with real power consumption of 4.55W. Next, a digital multimeter (DMM) placed across the resistor indicated V$_R$ = 30.06V$_{rms}$. Using the equation
 
 \begin{equation}
 	P = \frac{V_{R}^2}{R} 
 	\label{eqn:P}
 \end{equation}
 
-the true power $P$ is calculated to be 4.52W. Similarly, the apparent power $S$ is calculated using the equation,
+the true power $P$ can be calculated to be 4.52W. Similarly, the apparent power $S$ can be calculated using the equation,
 
 \begin{equation}
 	S = {V_{rms}}{I_{rms}}
 	\label{eqn:S} 
 \end{equation}
 
-and results to $S$ = 7.54VA. The $pf$ can be estimated using 
+which results in $S$ = 7.54VA. The $pf$ can be estimated using 
 
 \begin{equation}
 	pf = \frac{P}{S}
 	\label{eqn:pf}
 \end{equation}
 
-which yeilds a power factor of 0.6034. The $pf$ was then be measured to be 0.6019 by the following relationship.
+which yeilds a result of 0.6034. The $pf$ was then be measured to be 0.6019 by the following relationship.
 
 \begin{equation}
 	pf = \frac{P}{V\rms I\rms}
@@ -293,13 +301,15 @@ The relationship of the reactive power $Q$, true power $P$, and apparent power $
 	\label{eqn:Q}
 \end{equation}
 
-An $RL$ circuit was constructed for the second part with a 200$\Omega$ resistor, a 300 $m$H inductor, and the voltage set to 50.09V$_{rms}$. The wattmeter in turn measured a current of 181.5$m$A with power consumption of 7.16W. A digital multimeter (DMM) placed across the resistor indicated V$_R$ = 36.10V$_{rms}$. 
+This equation can be visualized by a right-angle triangle where $S$ is the hypothenuse.
 
-Using equation \ref{eqn:P}, the true power $P$ is expected to be 6.52W. With the relationship of equation \ref{eqn:S}, the apparent power results in $S$ = 9.09VA.
+Second, an $RL$ circuit was constructed with a 200$\Omega$ resistor, a 300 $m$H inductor, and the voltage set to 50.09V$_{rms}$. A digital multimeter (DMM) placed across the resistor indicated V$_R$ = 36.10V$_{rms}$. The wattmeter in turn measured a current of 181.5$m$A with true power consumption of 7.16W; however, using equation \ref{eqn:P}, the true power $P$ was expected to be 6.52W. 
 
-A $pf$ of 0.7876 is estimated using equation \ref{eqn:pf}; however, the $pf$ was measured to be 0.7207 using the relationship of equation \ref{eqn:pf_rms}.
+With the relationship of equation \ref{eqn:S}, the apparent power results in $S$ = 9.09VA.
 
-Using equation \ref{eqn:Q}, the reactive power $Q$ results in a value of 5.602VAR.
+A $pf$ of 0.7876 is estimated and expected using equation \ref{eqn:pf}; nevertheless, the value of the $pf$ measured to be 0.7207 using the relationship of equation \ref{eqn:pf_rms}.
+
+Using equation \ref{eqn:Q}, there appears to be 5.602VAR of reactive power $Q$ in the circuit.
 
 
 \begin{table}[h]
@@ -326,9 +336,9 @@ Using equation \ref{eqn:Q}, the reactive power $Q$ results in a value of 5.602VA
 \end{table}
 
 \subsection{Discussion}\label{sec:pow_discussion}
-The $RC$ circuit yielded similar power measurement results to those expected. In this circuit the difference between measured and calculated real power $P$ and power factor $pf$ was 0.664\% and 0.249\% respectively, which is negligible and expected when using non-ideal components.
+The $RC$ circuit yielded similar results to those expected. In this circuit the difference between measured and calculated real power $P$ and power factor $pf$ was 0.664\% and 0.249\% respectively, which is negligible and expected when using non-ideal components.
 
-The $RL$ circuit, however, showed slightly bigger discrepancies. The difference between measured and calculated $P$ and $pf$ was 8.94\% and 8.49\% respectively. From past experiments, these results can be expected due to the nature of inductors. Heat will increase the internal resistance, which ultimately skews the results.
+The $RL$ circuit, however, showed bigger discrepancies. The difference between measured and calculated $P$ and $pf$ was 8.94\% and 8.49\% respectively. From past experiments, these results can be expected due to the nature of inductors. Heat, a by-product of current and resistance, will increase internal resistance of the inductor which ultimately skews the results.
 
 
 \section{Conclusion}\label{sec:conclusion}
